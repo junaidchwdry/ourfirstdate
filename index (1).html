@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OUR FIRST DATEEEE!!!!!!</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #ffe4e1;
+      color: #333;
+      background-image: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOGdjMnFpbDY0Mzl4ZGljanpnN3R3aThvZTV6aWhrNmo0aDNtcnRwaSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/HSCZMUa1ao17h7l5mg/giphy.gif');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff69b4;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .question {
+      margin-bottom: 20px;
+    }
+
+    .error {
+      color: red;
+    }
+
+    .summary {
+      display: none;
+      background-color: #ffebcd;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .ticket {
+      display: none;
+      background-color: #ff69b4;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      color: #fff;
+      font-size: 20px;
+    }
+
+    select, input {
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 5px;
+      width: 100%;
+    }
+    
+    button {
+      padding: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>OUR FIRST DATEEEE!!!!!!</h1>
+    <form id="valentineForm">
+      <div class="question">
+        <label for="name">What is your name?</label>
+        <input type="text" id="name" name="name" required>
+        <button type="button" onclick="validateName()">Next</button>
+        <p id="nameError" class="error"></p>
+      </div>
+      <div class="question" id="timeQuestion">
+        <label for="startTime">What is the start time?</label>
+        <select id="startTime" name="startTime">
+          <option value="9:30">9:30</option>
+          <option value="10:00">10:00</option>
+          <option value="10:30">10:30</option>
+          <option value="11:00">11:00</option>
+        </select>
+        <label for="departureTime">What is the departure time?</label>
+        <select id="departureTime" name="departureTime">
+          <option value="2:30">2:30</option>
+          <option value="3:00">3:00</option>
+          <option value="3:30">3:30</option>
+          <option value="4:00">4:00</option>
+          <option value="4:30">4:30</option>
+        </select>
+        <button type="button" onclick="nextQuestion('musicQuestion')">Next</button>
+      </div>
+      <div class="question" id="musicQuestion">
+        <label>What music would you like to be played?</label>
+        <select id="music" name="music">
+          <option value="bollywood">Bollywood</option>
+          <option value="white girl music">White Girl Music</option>
+          <option value="rap">Rap</option>
+          <option value="uk drill">UK Drill</option>
+          <option value="sex music">Sex Music</option>
+          <option value="freaky music">Freaky Music</option>
+          <option value="freaky deaky music">Freaky Deaky Music</option>
+        </select>
+        <button type="button" onclick="nextQuestion('outfitQuestion')">Next</button>
+      </div>
+      <div class="question" id="outfitQuestion">
+        <label>What would your outfit be?</label>
+        <select id="outfit" name="outfit">
+          <option value="homeless style">Homeless Style</option>
+          <option value="get me pregnant clothing">Get Me Pregnant Clothing</option>
+          <option value="cute valentine day dressup">Cute Valentine Day Dressup</option>
+        </select>
+        <button type="button" onclick="nextQuestion('cuisineQuestion')">Next</button>
+      </div>
+      <div class="question" id="cuisineQuestion">
+        <label>What cuisine do you prefer?</label>
+        <select id="cuisine" name="cuisine">
+          <option value="american">American</option>
+          <option value="indian">Indian</option>
+          <option value="hakka">Hakka</option>
+          <option value="thai">Thai</option>
+          <option value="arab">Arab</option>
+        </select>
+        <button type="button" onclick="nextQuestion('activityQuestion')">Next</button>
+      </div>
+      <div class="question" id="activityQuestion">
+        <label>What activity would you like to do?</label>
+        <select id="activity" name="activity">
+          <option value="movies">Movies</option>
+          <option value="arcade">Arcade</option>
+          <option value="golfing">Golfing</option>
+          <option value="car drive">Car Drive</option>
+          <option value="bowling">Bowling</option>
+        </select>
+        <button type="button" onclick="nextQuestion('memoryQuestion')">Next</button>
+      </div>
+      <div class="question" id="memoryQuestion">
+        <label>What memory would you like to take home?</label>
+        <select id="memory" name="memory">
+          <option value="polaroid pictures">Polaroid Pictures</option>
+          <option value="painting canvas">Painting Canvas</option>
+          <option value="custom engraved lock">Custom Engraved Lock</option>
+        </select>
+        <button type="button" onclick="nextQuestion('cologneQuestion')">Next</button>
+      </div>
+      <div class="question" id="cologneQuestion">
+        <label>What cologne should I wear?</label>
+        <select id="cologne" name="cologne">
+          <option value="bleu de channel">Bleu De Channel</option>
+          <option value="dior sauvage">Dior Sauvage</option>
+          <option value="get me pregnant cologne">Get Me Pregnant Cologne</option>
+          <option value="have my kids cologne">Have My Kids Cologne</option>
+          <option value="my pants are gone cologne">My Pants Are Gone Cologne</option>
+        </select>
+        <button type="button" onclick="nextQuestion('phoneQuestion')">Next</button>
+      </div>
+      <div class="question" id="phoneQuestion">
+        <label>Will you constantly be checking your phone for location?</label>
+        <select id="phoneCheck" name="phoneCheck">
+          <option value="yes">Yes</option>
+        </select>
+        <p>(I know you're going to anyways)</p>
+        <button type="button" onclick="showSummary()">Finish</button>
+      </div>
+      <div id="summary" class="summary">
+        <h2>Your Date Details</h2>
+        <p id="summaryDetails"></p>
+        <button type="button" onclick="generateTicket()">Confirm</button>
+      </div>
+      <div id="ticket" class="ticket"></div>
+    </form>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const questions = document.querySelectorAll('.question');
+      questions.forEach((question, index) => {
+        if (index !== 0) {
+          question.style.display = 'none';
+        }
+      });
+    });
+
+    let errorIndex = 0;
+    const errorMessages = [
+      "who tf r u",
+      "nah idk who you r",
+      "ur not my gf wtf",
+      "this isnt ur date gtfo"
+    ];
+
+    function validateName() {
+      const name = document.getElementById('name').value.toLowerCase();
+      const nameError = document.getElementById('nameError');
+
+      if (name === 'adeeba') {
+        nameError.textContent = '';
+        errorIndex = 0; // reset error index when name is correct
+        nextQuestion('timeQuestion');
+      } else {
+        nameError.textContent = errorMessages[errorIndex];
+        errorIndex = (errorIndex + 1) % errorMessages.length; // change message on next click
+      }
+    }
+
+    function nextQuestion(nextId) {
+      const currentQuestion = document.querySelector('.question:not([style*="display: none"])');
+      currentQuestion.style.display = 'none';
+      document.getElementById(nextId).style.display = 'block';
+    }
+
+    function showSummary() {
+      const summary = document.getElementById('summary');
+      const summaryDetails = document.getElementById('summaryDetails');
+      const form = document.getElementById('valentineForm');
+      const formData = new FormData(form);
+      summaryDetails.innerHTML = `Name: ${formData.get('name')}<br>
+        Start Time: ${formData.get('startTime')}<br>
+        Departure Time: ${formData.get('departureTime')}<br>
+        Music: ${formData.get('music')}<br>
+        Outfit: ${formData.get('outfit')}<br>
+        Cuisine: ${formData.get('cuisine')}<br>
+        Activity: ${formData.get('activity')}<br>
+        Memory: ${formData.get('memory')}<br>
+        Cologne: ${formData.get('cologne')}<br>
+        Phone Check: ${formData.get('phoneCheck')}`;
+      summary.style.display = 'block';
+    }
+
+    function generateTicket() {
+      const name = document.getElementById('name').value;
+      const ticket = document.getElementById('ticket');
+      ticket.innerHTML = `
+        <h2>Valentine's Date Ticket</h2>
+        <p>Name: ${name}</p>
+        <p>Date: Monday, February 10, 2025</p>
+        <p>Please show this as a form of entry for your amazing spectacular date.</p>
+      `;
+      ticket.style.display = 'block';
+    }
+  </script>
+</body>
+</html>
